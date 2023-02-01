@@ -14,9 +14,13 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
-    "conf": "^9.0.2"
+    "conf": "^9.0.2",
+    "graceful-fs": "^4.2.10"
   },
   "bin": {
     "todos": "index.js"
+  },
+  "devDependencies": {
+    "glob": "^8.0.3"
   }
 }
