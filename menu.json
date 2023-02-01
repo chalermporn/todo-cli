@@ -1,0 +1,31 @@
+{
+  "sysId": "9315BDE9-A131-4273-9E92-6AFC7279EA29",
+  "menuName": "menu0001",
+  "menuTitle": "ระบบงบประมาณ",
+  "menuLevel": 0,
+  "showOrder": 10,
+  "rootPath": "/menu0001",
+  "programList": [], 
+  "submenu": [
+    {
+      "sysId": "4650AD79-0881-4744-BBFF-D1EA2B11AE94",
+      "menuName": "menu0002",
+      "menuTitle": "บันทึกข้อมูลเบื้องต้น อปท.",
+      "menuLevel": 1,
+      "showOrder": 10,
+      "rootpath": "/menu0001/menu0002",
+      "parentMenuId": "9315BDE9-A131-4273-9E92-6AFC7279EA29",
+      "navigateParameter": "screenname=localInfo",
+      "programList": [
+        {
+          "programId": "program0001",
+          "navigateParameter": "screenname=localInfo"
+        },
+        {
+          "programId": "PROGRAM0002",
+          "navigateParameter": "screenname=xxx"
+        }
+      ]
+    }
+  ]
+}
