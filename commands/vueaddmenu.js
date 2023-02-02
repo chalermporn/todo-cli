@@ -105,19 +105,23 @@ function vueaddmenu() {
         const menuLevel_1 = menuLevel_0 + ud;
         createIfNotExists(menuLevel_1.toLowerCase());
         //indexView.vue
-        fs.writeFileSync(
-          menuLevel_1 + IndexView,
-          contentVue({
-            menuTitle: sm2.menuTitle,
-            menuName: sm2.menuName,
-            rootPath: sm2.rootPath.toLowerCase() + capitalize(ud) + ".vue",
-          })
-        );
+        const inDexViewFile = menuLevel_1 + IndexView;
+        if (!fs.existsSync(inDexViewFile))
+          fs.writeFileSync(
+            inDexViewFile,
+            contentVue({
+              menuTitle: sm2.menuTitle,
+              menuName: capitalize(ud.replace("/", "")),
+              rootPath: sm2.rootPath.toLowerCase(),
+            })
+          );
         //UD.vue
-        fs.writeFileSync(
-          menuLevel_1 + capitalize(ud) + ".vue",
-          contentVueUd(sm2.menuName)
-        );
+        const udFile = menuLevel_1 + capitalize(ud) + ".vue";
+        if (!fs.existsSync(udFile))
+          fs.writeFileSync(
+            menuLevel_1 + capitalize(ud) + ".vue",
+            contentVueUd(sm2.menuName)
+          );
 
         //views/common
         const subCommon = pathCommon + "/" + sm2.menuName.toLowerCase();
@@ -130,10 +134,9 @@ function vueaddmenu() {
 
             if (i.includes("programId")) {
               createIfNotExists(`${subCommon}/${sp.toLowerCase()}`);
-              fs.writeFileSync(
-                `${subCommon}/${sp}/${sp}.component.vue`,
-                component(sp)
-              );
+              const commonFile = `${subCommon}/${sp}/${sp}.component.vue`;
+              if (!fs.existsSync(commonFile))
+                fs.writeFileSync(commonFile, component(sp));
             }
           });
         }
