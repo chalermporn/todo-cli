@@ -10,8 +10,8 @@ onBeforeMount(() => {
     {
       title:"อากรการฆ่าสัตว์",
       step: 0,
-      componentName: "UDARM0002",
-      componentPath: "/receive/udarm0002/Udarm0002.vue",
+      componentName: "Udarm0002",
+      componentPath: "/receive/udarm0002",
     },
   ];
 });
